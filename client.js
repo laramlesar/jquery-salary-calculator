@@ -20,25 +20,37 @@ function newEmployee(firstInput, lastInput, employeeNum, title, salary){
         Title:title,
         Salary:salary
 
-}
-inventory.push(employee)
-return true;
+    }
+    inventory.push(employee)
+    return true;
 }
 
-function readyNow(){
- $( '#submit' ).on( 'click', addEmployee)
-}
 
 function addEmployee(){
     let First = $('#firstInput').val();
     let Last = $('#lastInput').val();
     let Number = $('#employeeNum').val();
     let Title = $('#title').val();
-    let Salary = $('#salary').val();
+    let Salary =parseInt($('#salary').val());
     console.log('addEmployee');
 
     newEmployee(First, Last, Number, Title, Salary);
 
+    monthlyCost();  
+
 
 }
-$('td').append()
+
+function monthlyCost(){
+    let yearlyExpense = 0
+    for(let i=0; i<inventory.length; i++){
+        console.log(inventory[i]);
+
+        console.log(inventory[i].Salary);
+        yearlyExpense = yearlyExpense + inventory[i].Salary;
+        console.log(yearlyExpense);
+    }
+    monthlyExpense = yearlyExpense / 12;
+    console.log(monthlyExpense);
+    return monthlyExpense;
+}
