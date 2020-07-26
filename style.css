@@ -30,3 +30,6 @@ td{
     border: 1px solid black;
     width: 153px;
 }
+ul{
+    text-align: right;
+}

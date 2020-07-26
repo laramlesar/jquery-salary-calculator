@@ -25,7 +25,6 @@ function newEmployee(firstInput, lastInput, employeeNum, title, salary){
     inventory.push(employee)
     return true;
 
-    
 }
 
 
@@ -50,17 +49,8 @@ function addEmployee(){
     $('#title').val('');
     $('#salary').val('');
 
-
-
-
     console.log($('#firstInput').val());
-    
-//   $('#myTable').append("<tr>" + 
- //   "<td>"+First+"</td>" + "<td>" +Last+ "</td>" + "<td>"+ Number +"</td>"+ 
- //   "<td>"+Title+"</td>" + "<td>"+Salary+"</td>" + "</tr>");
 
-  
-    
 }
 function appendEmployeesToDom(){
     console.log(inventory);
@@ -91,9 +81,16 @@ function monthlyCost(){
     }
     monthlyExpense = yearlyExpense / 12;
     console.log(monthlyExpense);
-    return monthlyExpense;
-
-
+    
+   $('#totalMonthly').empty() 
+   $('ul').append('<ul>'+monthlyExpense+ '</ul>') 
+   
+if(monthlyExpense > 20000){
+    $('ul').css("background-color", "red");
+   
+}
+    
+   return monthlyExpense;
 
 }
 
@@ -101,7 +98,5 @@ function deleteEmployee(){
     console.log("clicked");
     $(this).closest('tr').remove();
 
-    //$(this).closest('td').remove('delete'); 
 }
-//$('#myTable td').on("click", "#deleteBtn")
-    //when pressed deletes corresponding row
+
