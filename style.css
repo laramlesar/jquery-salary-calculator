@@ -14,13 +14,13 @@ h3{
 table{
     border-collapse: collapse;
     border: 1px solid black;
-    width: 100%;
     text-align: left;
-    column-span: ;
+    
 }
 th{
     border-collapse: collapse;
     border: 1px solid black;
+    width: 153px;
     
 
 }

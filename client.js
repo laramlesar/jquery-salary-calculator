@@ -23,6 +23,8 @@ function newEmployee(firstInput, lastInput, employeeNum, title, salary){
     }
     inventory.push(employee)
     return true;
+
+    
 }
 
 
@@ -36,10 +38,28 @@ function addEmployee(){
 
     newEmployee(First, Last, Number, Title, Salary);
 
+    //appends to table along with created delete button
+
     monthlyCost();  
 
-
+  /*$('#myTable').appendTo("<tr>" +
+    "<th>" + First + "</th>" +
+    "<th>" + Last + "</th>" +
+    "<th>" + Number + "</th>" +
+    "<tr>" + Title + "</tr>" +
+    "<th>" + Salary + "</th>");*/
+    
 }
+//function createDeleteButton(){
+   // let delete= $('<button/>', {
+       // text: 'Delete'
+        //id: 'deleteButton'
+  //  });
+
+  //  $(delete).on('click', removeEmployee)
+    
+    //when clicked will remove row of data - empty command
+//}
 
 function monthlyCost(){
     let yearlyExpense = 0
@@ -53,7 +73,11 @@ function monthlyCost(){
     monthlyExpense = yearlyExpense / 12;
     console.log(monthlyExpense);
     return monthlyExpense;
+
+
+//append to total monthly
 }
+
 
 
 //outputC.empty(); delete button will be tied to this command
