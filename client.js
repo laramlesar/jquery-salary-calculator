@@ -7,6 +7,7 @@ $( document ).ready( handleReady );
 function handleReady(){
     console.log('jQuery has joined the party');
     $( '#submit' ).on( 'click', addEmployee);
+    $( '#myTable').on( 'click', 'button.deleteBtn', deleteEmployee);
 }
 
 let inventory = [];
@@ -38,29 +39,35 @@ function addEmployee(){
 
     newEmployee(First, Last, Number, Title, Salary);
 
-    //appends to table along with created delete button
+    appendEmployeesToDom();
 
     monthlyCost();  
 
-  /*$('#myTable').appendTo("<tr>" +
-    "<th>" + First + "</th>" +
-    "<th>" + Last + "</th>" +
-    "<th>" + Number + "</th>" +
-    "<tr>" + Title + "</tr>" +
-    "<th>" + Salary + "</th>");*/
+//   $('#myTable').append("<tr>" + 
+ //   "<td>"+First+"</td>" + "<td>" +Last+ "</td>" + "<td>"+ Number +"</td>"+ 
+ //   "<td>"+Title+"</td>" + "<td>"+Salary+"</td>" + "</tr>");
+
+  
     
 }
-//function createDeleteButton(){
-   // let delete= $('<button/>', {
-       // text: 'Delete'
-        //id: 'deleteButton'
-  //  });
-
-  //  $(delete).on('click', removeEmployee)
-    
-    //when clicked will remove row of data - empty command
-//}
-
+function appendEmployeesToDom(){
+    console.log(inventory);
+    $('targetmyTable').empty();
+    for(let employee of inventory){
+        $('#myTable').append(`<tr> 
+        <td>${employee.FirstName}</td>
+        <td>${employee.LastName}</td>
+        <td>${employee.EmployeeNumber}</td>
+        <td>${employee.Title}</td>
+        <td>$${employee.Salary}</td>
+        <td><button class="deleteBtn">DELETE</button>
+        </td>
+        </tr>
+        `)
+        console.log(employee.FirstName);
+    }
+}
+   
 function monthlyCost(){
     let yearlyExpense = 0
     for(let i=0; i<inventory.length; i++){
@@ -75,9 +82,14 @@ function monthlyCost(){
     return monthlyExpense;
 
 
-//append to total monthly
+
 }
 
+function deleteEmployee(){
+    console.log("clicked");
+    $(this).closest('tr').remove();
 
-
-//outputC.empty(); delete button will be tied to this command
+    //$(this).closest('td').remove('delete'); 
+}
+//$('#myTable td').on("click", "#deleteBtn")
+    //when pressed deletes corresponding row
