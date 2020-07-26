@@ -54,3 +54,6 @@ function monthlyCost(){
     console.log(monthlyExpense);
     return monthlyExpense;
 }
+
+
+//outputC.empty(); delete button will be tied to this command

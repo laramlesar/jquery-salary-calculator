@@ -4,3 +4,23 @@ header{
     font-size: 62px;
     height:75px;
 }
+h2{
+    text-align: left;
+}
+h3{
+    text-align: right;
+}
+
+table{
+    border-collapse: collapse;
+    border: 1px solid black;
+    width: 100%;
+    text-align: left;
+    column-span: ;
+}
+th{
+    border-collapse: collapse;
+    border: 1px solid black;
+    
+
+}
