@@ -42,7 +42,19 @@ function addEmployee(){
     appendEmployeesToDom();
 
     monthlyCost();  
+    
+    console.log($('#firstInput').val());
+    $('#firstInput').val('');
+    $('#lastInput').val('');
+    $('#employeeNum').val('');
+    $('#title').val('');
+    $('#salary').val('');
 
+
+
+
+    console.log($('#firstInput').val());
+    
 //   $('#myTable').append("<tr>" + 
  //   "<td>"+First+"</td>" + "<td>" +Last+ "</td>" + "<td>"+ Number +"</td>"+ 
  //   "<td>"+Title+"</td>" + "<td>"+Salary+"</td>" + "</tr>");
@@ -52,7 +64,7 @@ function addEmployee(){
 }
 function appendEmployeesToDom(){
     console.log(inventory);
-    $('targetmyTable').empty();
+    $('#myTable').empty()
     for(let employee of inventory){
         $('#myTable').append(`<tr> 
         <td>${employee.FirstName}</td>
